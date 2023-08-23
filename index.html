@@ -9,10 +9,31 @@
             justify-content: center; /* center horizontally */
             align-items: center; /* center vertically */
             font-family: Arial, sans-serif;
+            position: relative; /* Added this to position child elements */
+        }
+
+        /* New class for the left-aligned image */
+        .left-image {
+            position: absolute;
+            left: 30%; /* position it to the leftmost side */
+            top: 50%; /* center vertically */
+            transform: translateY(-50%); /* offset to truly center vertically */
         }
 
         .center-container {
-            text-align: center;
+            text-align: left;
+            position: absolute;
+            left: 42%; /* position it to the leftmost side */
+            top: 40%; /* center vertically */
+            transform: translateY(-50%); /* offset to truly center vertically */
+        }
+
+        .left-container {
+            text-align: left;
+            position: absolute;
+            left: 42%; /* position it to the leftmost side */
+            top: 46%; /* center vertically */
+            transform: translateY(-50%); /* offset to truly center vertically */
         }
 
         h1 {
@@ -25,9 +46,13 @@
     </style>
 </head>
 <body>
+    <img class="left-image" src="ufuksen.png" width="200" height="300"> <!-- This image is now outside the .center-container and will be positioned to the left -->
     <div class="center-container">
         <h1>Ufuk Sen</h1>
         <p>engineer at DSI.</p>
+    </div>
+    <div class="left-container">
+            <a href="https://github.com/ufk-sn">GitHub</a>
     </div>
 </body>
 </html>
