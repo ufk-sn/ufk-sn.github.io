@@ -28,6 +28,21 @@
             margin-right: 20px;
         }
 
+        .text-container {
+            width: 500px;      /* Example width */
+            height: 400px;     /* Example height */
+            overflow-y: auto;  /* Allow vertical scrolling */
+            word-wrap: break-word; /* Break long words */
+            font-size: 16px;   /* Adjust font size */
+            text-align: justify;
+            color: black;
+        }
+
+        .job-color {
+            color: green;
+            font-weight: bold;
+        }
+
         h1 {
             color: red;
             margin-bottom: 5px;
@@ -35,9 +50,14 @@
         }
 
         p {
-            color: green;
             margin-top: 5px;
-            font-weight: bold;
+            word-wrap: break-word;
+            line-height: 1.5;
+        }
+
+        a {
+            color: blue;
+            margin-top: 5px;
         }
 
         /* Adjustments for smaller screens */
@@ -59,9 +79,16 @@
         <img class="left-image" src="images/ufuksen.png" alt="Ufuk Sen">
         <div>
             <h1>Ufuk Sen</h1>
-            <p>engineer at DSI.</p>
+            <div class="job-color">
+                <p>engineer at DSI.</p>
+            </div>
             <a href="https://github.com/ufk-sn">GitHub</a>
+            <div class="text-container">
+                    <p>I am a Civil Engineer. I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013. I received my Master’s degree in Structural Engineering from the Louisiana State University in August 2018.</p>
+                    <p>Since Aug 2018, I have been working in the department of dams and hydropower plants,</p>
+            </div>
         </div>
+
     </div>
 </body>
 </html>
