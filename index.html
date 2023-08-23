@@ -3,44 +3,29 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
-        @font-face {
-            font-family: 'Indie Flower'; /* You can name it whatever you prefer, but 'Indie Flower' is straightforward */
-            src: url('fonts/IndieFlower-Regular.ttf') format('truetype'); 
-        }
-
         body {
             margin: 0;
-            min-height: 100vh; /* viewport height */
+            min-height: 100vh;
             display: flex;
-            justify-content: center; /* center horizontally */
-            align-items: center; /* center vertically */
-            font-family: 'Indie Flower', cursive;
-            position: relative; /* Added this to position child elements */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack children vertically */
+            font-family: 'Indie Flower', regular;
+            background-color: #f4f4f4; /* Just to give a different background for contrast */
         }
 
-        /* New class for the left-aligned image */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: -30%;
+            margin-top: -10%;
+        }
+
         .left-image {
-            position: absolute;
-            left: 30%; /* position it to the leftmost side */
-            top: 50%; /* center vertically */
-            transform: translateY(-50%); /* offset to truly center vertically */
-        }
-
-        .center-container {
-            text-align: left;
-            position: absolute;
-            left: 42%; /* position it to the leftmost side */
-            top: 40%; /* center vertically */
-            transform: translateY(-50%); /* offset to truly center vertically */
-        }
-
-        .left-container {
-            text-align: left;
-            position: absolute;
-            left: 42%; /* position it to the leftmost side */
-            top: 45%; /* center vertically */
-            transform: translateY(-50%); /* offset to truly center vertically */
+            width: 200px; /* A smaller default width */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px;
         }
 
         h1 {
@@ -54,16 +39,29 @@
             margin-top: 5px;
             font-weight: bold;
         }
+
+        /* Adjustments for smaller screens */
+        @media screen and (max-width: 600px) {
+            .content-container {
+                flex-direction: column; /* Stack vertically on small screens */
+            }
+            
+            .left-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <img class="left-image" src="images/ufuksen.png" width="200" height="300"> <!-- This image is now outside the .center-container and will be positioned to the left -->
-    <div class="center-container">
-        <h1>Ufuk Sen</h1>
-        <p>engineer at DSI.</p>
-    </div>
-    <div class="left-container">
+    <div class="content-container">
+        <img class="left-image" src="images/ufuksen.png" alt="Ufuk Sen">
+        <div>
+            <h1>Ufuk Sen</h1>
+            <p>engineer at DSI.</p>
             <a href="https://github.com/ufk-sn">GitHub</a>
+        </div>
     </div>
 </body>
 </html>
