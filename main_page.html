@@ -2,13 +2,20 @@
 <html>
 <head>
     <style>
+
+        @font-face {
+            font-family: 'Indie Flower'; /* You can name it whatever you prefer, but 'Indie Flower' is straightforward */
+            src: url('fonts/IndieFlower.ttf') format('truetype'); 
+            /* Update the URL to the correct path where you placed the .ttf file */
+        }
+
         body {
             margin: 0;
             min-height: 100vh; /* viewport height */
             display: flex;
             justify-content: center; /* center horizontally */
             align-items: center; /* center vertically */
-            font-family: Arial, sans-serif;
+            font-family: 'Indie Flower', cursive;
             position: relative; /* Added this to position child elements */
         }
 
@@ -46,7 +53,7 @@
     </style>
 </head>
 <body>
-    <img class="left-image" src="ufuksen.png" width="200" height="300"> <!-- This image is now outside the .center-container and will be positioned to the left -->
+    <img class="left-image" src="images/ufuksen.png" width="200" height="300"> <!-- This image is now outside the .center-container and will be positioned to the left -->
     <div class="center-container">
         <h1>Ufuk Sen</h1>
         <p>engineer at DSI.</p>
