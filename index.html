@@ -7,7 +7,7 @@
             margin: 0;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            justify-content: top;
             align-items: center;
             flex-direction: column; /* Stack children vertically */
             font-family: 'Indie Flower', regular;
@@ -16,13 +16,33 @@
 
         .content-container {
             display: flex;
-            justify-content: left;
+            justify-content: left; /* Adjusted to start from the left */
             align-items: flex-start;
-            width: 80%; /* instead of negative margins, use width to control the container's size */
-            height: 70%;
-            max-width: 1200px; /* set a max-width if needed */
-            margin: 0 auto; /* centers the container */
-            margin-top: -10%;
+            width: 100%; 
+            max-width: 1300px;
+            margin: 0 auto;
+            margin-left: 100px; /* To account for the sidebar width */
+            margin-top: 100px;
+        }
+
+        .sidebar {
+            position: fixed; /* Fixes the sidebar to a position */
+            top: 0;          /* Starts from the top edge */
+            left: 0;         /* Starts from the left edge */
+            height: 100vh;   /* Takes the full viewport height */
+            width: 250px;     /* Fixed width to make it thin */
+            background-color: #e0e0e0;
+            box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px 10px; /* Padding adjusted for the thin sidebar */
+        }
+
+        .main-content {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-left: 300px;
+            top: 0;
         }
 
         .left-image {
@@ -42,14 +62,14 @@
             color: black;
         }
 
-        .job-color {
-            color: green;
-            font-weight: bold;
-        }
-
         h1 {
             color: red;
             margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .job-color {
+            color: green;
             font-weight: bold;
         }
 
@@ -65,14 +85,18 @@
         }
 
         /* Adjustments for smaller screens */
-        @media screen and (max-width: 600px) {
-            .content-container {
-                flex-direction: column;
-                align-items: center; /* center content on mobile */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 60px; /* Even thinner for mobile */
+                padding: 10px 5px;
             }
-            
+
+            .content-container {
+                margin-left: 0px; /* Adjust for mobile sidebar width */
+            }
+
             .left-image {
-                width: 120px; /* Slightly smaller image for mobile */
+                width: 60px; /* Slightly smaller image for mobile */
                 margin-right: 0;
                 margin-bottom: 15px;
             }
@@ -86,19 +110,20 @@
 </head>
 <body>
     <div class="content-container">
-        <img class="left-image" src="images/ufuksen.png" alt="Ufuk Sen">
-        <div>
+        <div class="sidebar">
+            <img class="left-image" src="images/ufuksen.png" alt="Ufuk Sen">
             <h1>Ufuk Sen</h1>
             <div class="job-color">
                 <p>engineer at DSI.</p>
             </div>
             <a href="https://github.com/ufk-sn">GitHub</a>
+        </div>
+        <div class="main-content">
             <div class="text-container">
-                    <p>I am a Civil Engineer. I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013. I received my Master’s degree in Structural Engineering from the Louisiana State University in August 2018.</p>
-                    <p>Since Aug 2018, I have been working in the department of dams and hydropower plants,</p>
+                <p>I am a Civil Engineer. I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013. I received my Master’s degree in Structural Engineering from the Louisiana State University in August 2018.</p>
+                <p>Since Aug 2018, I have been working in the department of dams and hydropower plants,</p>
             </div>
         </div>
-
     </div>
 </body>
 </html>
