@@ -11,8 +11,20 @@
             align-items: center;
             flex-direction: column; /* Stack children vertically */
             font-family: 'Indie Flower', regular;
+            position: relative;
             background-color: #f4f4f4; /* Just to give a different background for contrast */
         }
+
+        .external-content {
+            position: absolute;  /* Absolute positioning relative to its nearest positioned ancestor */
+            width: 100%;         /* Take the full width of the page */
+            height: 200px;       /* Adjust the height as needed */
+            bottom: 0;           /* Stick to the bottom of the nearest positioned ancestor */
+            left: 0;             /* Align to the left */
+            border: none;        /* Remove the default iframe border */
+            z-index: 1;          /* Ensure it's on top if there's any overlapping content */
+        }
+
 
         .content-container {
             display: flex;
@@ -136,5 +148,6 @@
             </div>
         </div>
     </div>
+    <iframe class="external-content" src="cat.html"></iframe>
 </body>
 </html>
