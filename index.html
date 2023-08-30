@@ -15,17 +15,6 @@
             background-color: #f4f4f4; /* Just to give a different background for contrast */
         }
 
-        .external-content {
-            position: absolute;  /* Absolute positioning relative to its nearest positioned ancestor */
-            width: 100%;         /* Take the full width of the page */
-            height: 200px;       /* Adjust the height as needed */
-            bottom: 0;           /* Stick to the bottom of the nearest positioned ancestor */
-            left: 0;             /* Align to the left */
-            border: none;        /* Remove the default iframe border */
-            z-index: 1;          /* Ensure it's on top if there's any overlapping content */
-        }
-
-
         .content-container {
             display: flex;
             justify-content: flex-start; /* Adjusted to start from the left */
@@ -46,13 +35,14 @@
             background-color: #e0e0e0;
             box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
             padding: 20px 10px; /* Padding adjusted for the thin sidebar */
+            z-index: -40;
         }
 
         .main-content {
             flex: 2;
             display: flex;
             flex-direction: column;
-            align-items: lflex-start;
+            align-items: flex-start;
             margin-left: 20px;
             top: 0;
         }
@@ -102,6 +92,112 @@
             margin-left: 25px;
         }
 
+        #marco{
+            width: 1325px;
+            height: 100px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-top: 2em;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            }
+        #cielo{
+            border-radius: 16px;
+            width: 1325px;
+            height: 100px;
+            background: linear-gradient(to bottom,  #0B4C5F 0%,#04B4AE 52%,#0c0207 100%); 
+            position: absolute;
+            z-index: -30;
+            top: 0;
+            margin-top: 2em;
+            }
+        #edificios{
+            background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526533/eva/edificiosOne_fsg7nx.svg');
+            height: 100px; 
+            width: 1325px;
+            background-size: auto 100px; 
+            z-index: -10;
+            top: 2em;
+            background-repeat: repeat-x;
+            -webkit-animation: animar_edificios 120s linear infinite;
+            -ms-animation: animar_edificios 120s linear infinite;
+            -moz-animation: animar_edificios 120s linear infinite;
+            position: absolute;
+            }
+            @keyframes animar_edificios {
+                from { background-position: 1325px 0; }
+                to { background-position: -1395px 0; }
+            }
+            @-webkit-keyframes  animar_edificios {
+                from { background-position: -1395px 0; }
+                to { background-position: 1325px 0; }
+            }
+            @-ms-keyframes  animar_edificios {
+                from { background-position: -1395px 0; }
+                to { background-position: 1325px 0; }
+            }
+            @-moz-keyframes  animar_edificios {
+                from { background-position: -1395px 0; }
+                to { background-position: 1325px 0; }
+            } 
+        #luna {
+            width: 6em;
+            height: 4em;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -moz-box-shadow: 30px 10px 0 #F7F8E0;
+            -webkit-box-shadow: 30px 10px 0 #F7F8E0;
+            box-shadow: 30px 10px 0 #F7F8E0;
+            margin-top: 0;
+            margin-left: 50%;
+            position: absolute;
+            z-index: -19;
+            }
+        #muro{
+            height: 2em;
+            width: 100%;
+            background: -moz-linear-gradient(top,  #416663 0%, #0c0207 19%); 
+            background: -webkit-linear-gradient(top,  #416663 0%,#0c0207 19%); 
+            background: linear-gradient(to bottom,  #416663 0%,#0c0207 19%); 
+            bottom:0px; 
+            }
+        #gato{
+            background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg');
+            height: 100px; 
+            width: 170px;
+            background-size: 2720px 100px;
+            margin-top: 0;
+            margin-left: 2em;
+            z-index: 100;
+            -webkit-animation: sprite-animation 1.2s steps(15) infinite;
+            -moz-animation: sprite-animation 1.2s steps(15) infinite; 
+            -ms-animation: sprite-animation 1.2s steps(15) infinite; 
+            animation: sprite-animation 1.2s steps(15) infinite;
+            }
+            @keyframes sprite-animation { 
+            from { background-position: 0 0; }
+            to { background-position: -2550px 0; }
+            }
+
+            @-webkit-keyframes sprite-animation { 
+                from { background-position: 0 0; }
+                to { background-position: -2550px 0; }
+            }
+
+            @-ms-keyframes sprite-animation { 
+                from { background-position: 0 0; }
+                to { background-position: -2550px 0; }
+            }
+
+            @-moz-keyframes sprite-animation { 
+                from { background-position: 0 0; }
+                to { background-position: -2550px 0; }
+            }
+
+
         /* Adjustments for smaller screens */
         @media screen and (max-width: 768px) {
             .sidebar {
@@ -148,6 +244,12 @@
             </div>
         </div>
     </div>
-    <iframe class="external-content" src="cat.html" style="width:100%; height:20vh; border:none;"></iframe>
+    <div id="marco">
+        <div id="cielo"></div>
+        <div id="luna"></div>
+        <div id="gato"></div>
+        <div id="muro"></div>
+        <div id="edificios"></div>
+    </div>
 </body>
 </html>
