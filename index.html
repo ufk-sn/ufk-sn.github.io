@@ -5,7 +5,8 @@
     <style>
         body {
             margin: 0;
-            min-height: 100vh;
+            min-height: 95vh;
+            width: 100%;
             display: flex;
             justify-content: top;
             align-items: center;
@@ -19,11 +20,10 @@
             display: flex;
             justify-content: flex-start; /* Adjusted to start from the left */
             align-items: flex-start;
-            width: 100%; 
-            max-width: 1300px;
+            width: 100vh;
             margin: 0 auto;
-            margin-left: 270px; /* To account for the sidebar width */
-            margin-top: 100px;
+            margin-left: 35vh; /* To account for the sidebar width */
+            margin-top: 10vh;
         }
 
         .sidebar {
@@ -31,7 +31,7 @@
             top: 0;          /* Starts from the top edge */
             left: 0;         /* Starts from the left edge */
             height: 100vh;   /* Takes the full viewport height */
-            width: 250px;     /* Fixed width to make it thin */
+            width: 30vh;     /* Fixed width to make it thin */
             background-color: #e0e0e0;
             box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
             padding: 20px 10px; /* Padding adjusted for the thin sidebar */
@@ -48,7 +48,7 @@
         }
 
         .left-image {
-            width: 200px;
+            width: 25vh;
             height: auto;
             margin-right: 20px;
             margin-left: auto; /* Center the image horizontally */
@@ -57,8 +57,7 @@
         }
 
         .text-container {
-            max-width: 500px; /* Use max-width instead of width */
-            width: 100%; /* This ensures it takes full width on smaller devices but doesn't exceed 500px */
+            width: 70vh; /* This ensures it takes full width on smaller devices but doesn't exceed 500px */
             height: auto; /* let it expand as needed */
             overflow-y: auto;
             word-wrap: break-word;
@@ -93,7 +92,7 @@
         }
 
         #marco{
-            width: 1325px;
+            width: 100vh;
             height: 100px;
             margin: 0 auto;
             overflow: hidden;
