@@ -13,7 +13,7 @@
             flex-direction: column; /* Stack children vertically */
             font-family: 'Indie Flower', regular;
             position: relative;
-            background-color: #f4f4f4; /* Just to give a different background for contrast */
+            background-color: #e23b3bed; /* Just to give a different background for contrast */
         }
 
         .content-container {
@@ -50,10 +50,16 @@
         .left-image {
             width: 25vh;
             height: auto;
-            margin-right: 20px;
             margin-left: auto; /* Center the image horizontally */
             margin-right: auto; /* Center the image horizontally */
             display: block; /* Make the image a block element to apply margins */
+        }
+
+        .sidebar_text {
+            width: 25vh;
+            height: auto;
+            margin-left: auto; /* Center the image horizontally */
+            margin-right: auto; /* Center the image horizontally */
         }
 
         .text-container {
@@ -70,13 +76,11 @@
             color: red;
             margin-bottom: 5px;
             font-weight: bold;
-            margin-left: 25px;
         }
 
         .job-color {
             color: green;
             font-weight: bold;
-            margin-left: 25px;
         }
 
         p {
@@ -87,13 +91,12 @@
 
         a {
             color: blue;
-            margin-top: 5px;
-            margin-left: 25px;
         }
 
         #marco{
             width: 100vh;
-            height: 100px;
+            height: 15vh;
+            min-height: 100px;
             margin: 0 auto;
             overflow: hidden;
             border-radius: 16px;
@@ -104,8 +107,8 @@
             }
         #cielo{
             border-radius: 16px;
-            width: 1325px;
-            height: 100px;
+            width: 100vh;
+            height: 100vh;
             background: linear-gradient(to bottom,  #0B4C5F 0%,#04B4AE 52%,#0c0207 100%); 
             position: absolute;
             z-index: -30;
@@ -114,8 +117,8 @@
             }
         #edificios{
             background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526533/eva/edificiosOne_fsg7nx.svg');
-            height: 100px; 
-            width: 1325px;
+            height: 100vh; 
+            width: 100vh;
             background-size: auto 100px; 
             z-index: -10;
             top: 2em;
@@ -157,7 +160,7 @@
             }
         #muro{
             height: 2em;
-            width: 100%;
+            width: 100vh;
             background: -moz-linear-gradient(top,  #416663 0%, #0c0207 19%); 
             background: -webkit-linear-gradient(top,  #416663 0%,#0c0207 19%); 
             background: linear-gradient(to bottom,  #416663 0%,#0c0207 19%); 
@@ -171,10 +174,10 @@
             margin-top: 0;
             margin-left: 2em;
             z-index: 100;
-            -webkit-animation: sprite-animation 1.2s steps(15) infinite;
-            -moz-animation: sprite-animation 1.2s steps(15) infinite; 
-            -ms-animation: sprite-animation 1.2s steps(15) infinite; 
-            animation: sprite-animation 1.2s steps(15) infinite;
+            -webkit-animation: sprite-animation 1.2s steps(15,end) infinite;
+            -moz-animation: sprite-animation 1.2s steps(15,end) infinite; 
+            -ms-animation: sprite-animation 1.2s steps(15,end) infinite; 
+            animation: sprite-animation 1.2s steps(15,end) infinite;
             }
             @keyframes sprite-animation { 
             from { background-position: 0 0; }
@@ -196,45 +199,20 @@
                 to { background-position: -2550px 0; }
             }
 
-
-        /* Adjustments for smaller screens */
-        @media screen and (max-width: 768px) {
-            .sidebar {
-                width: 90px; /* Even thinner for mobile */
-                padding: 10px 5px;
-            }
-
-            .content-container {
-                margin-left: 110px; /* Adjust for mobile sidebar width */
-                margin-top: 20px;
-            }
-
-            .left-image {
-                width: 60px; /* Slightly smaller image for mobile */
-                margin-right: 0;
-                margin-bottom: 15px;
-                margin-left: auto; /* Center the image horizontally */
-                margin-right: 0; /* Center the image horizontally */
-                display: block; /* Make the image a block element to apply margins */
-                
-            }
-
-            .text-container {
-                padding: 0 10px; /* Add some padding on the sides for readability */
-            }
-        }
-
     </style>
 </head>
 <body>
     <div class="content-container">
         <div class="sidebar">
             <img class="left-image" src="images/ufuksen.png" alt="Ufuk Sen">
-            <h1>Ufuk Sen</h1>
-            <div class="job-color">
-                <p>engineer at DSI.</p>
+            <div class="sidebar_text">
+                <h1>Ufuk Sen</h1>
+                <div class="job-color">
+                    <p>engineer at DSI.</p>
+                </div>
+                <a href="https://github.com/ufk-sn">GitHub</a>
             </div>
-            <a href="https://github.com/ufk-sn">GitHub</a>
+            
         </div>
         <div class="main-content">
             <div class="text-container">
