@@ -13,16 +13,16 @@
             flex-direction: column; /* Stack children vertically */
             font-family: 'Indie Flower', regular;
             position: relative;
-            background-color: #e23b3bed; /* Just to give a different background for contrast */
+            background-color: #bd9e9eed; /* Just to give a different background for contrast */
         }
 
         .content-container {
             display: flex;
             justify-content: flex-start; /* Adjusted to start from the left */
             align-items: flex-start;
-            width: 100vh;
+            width: 100vw;
             margin: 0 auto;
-            margin-left: 35vh; /* To account for the sidebar width */
+            margin-left: 13vw; /* To account for the sidebar width */
             margin-top: 10vh;
         }
 
@@ -31,7 +31,7 @@
             top: 0;          /* Starts from the top edge */
             left: 0;         /* Starts from the left edge */
             height: 100vh;   /* Takes the full viewport height */
-            width: 30vh;     /* Fixed width to make it thin */
+            width: 12vw;     /* Fixed width to make it thin */
             background-color: #e0e0e0;
             box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
             padding: 20px 10px; /* Padding adjusted for the thin sidebar */
@@ -48,7 +48,7 @@
         }
 
         .left-image {
-            width: 25vh;
+            width: 11vw;
             height: auto;
             margin-left: auto; /* Center the image horizontally */
             margin-right: auto; /* Center the image horizontally */
@@ -56,14 +56,14 @@
         }
 
         .sidebar_text {
-            width: 25vh;
+            width: 11vw;
             height: auto;
             margin-left: auto; /* Center the image horizontally */
             margin-right: auto; /* Center the image horizontally */
         }
 
         .text-container {
-            width: 70vh; /* This ensures it takes full width on smaller devices but doesn't exceed 500px */
+            width: 80vw; /* This ensures it takes full width on smaller devices but doesn't exceed 500px */
             height: auto; /* let it expand as needed */
             overflow-y: auto;
             word-wrap: break-word;
@@ -94,7 +94,7 @@
         }
 
         #marco{
-            width: 100vh;
+            width: 100vw;
             height: 15vh;
             min-height: 100px;
             margin: 0 auto;
@@ -107,7 +107,7 @@
             }
         #cielo{
             border-radius: 16px;
-            width: 100vh;
+            width: 100vw;
             height: 100vh;
             background: linear-gradient(to bottom,  #0B4C5F 0%,#04B4AE 52%,#0c0207 100%); 
             position: absolute;
@@ -118,7 +118,7 @@
         #edificios{
             background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526533/eva/edificiosOne_fsg7nx.svg');
             height: 100vh; 
-            width: 100vh;
+            width: 100vw;
             background-size: auto 100px; 
             z-index: -10;
             top: 2em;
