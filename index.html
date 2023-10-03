@@ -38,6 +38,15 @@
             z-index: -40;
         }
 
+        .sidebar_github {
+            position: fixed; /* Fixes the sidebar to a position */
+            top: 22.5vw;          /* Starts from the top edge */
+            left: 0;         /* Starts from the left edge */
+            height: 100vh;   /* Takes the full viewport height */
+            width: 12vw;     /* Fixed width to make it thin */
+            padding: 20px 10px; /* Padding adjusted for the thin sidebar */
+        }
+
         .main-content {
             flex: 2;
             display: flex;
@@ -160,7 +169,7 @@
             }
         #muro{
             height: 2em;
-            width: 100vh;
+            width: 100vw;
             background: -moz-linear-gradient(top,  #416663 0%, #0c0207 19%); 
             background: -webkit-linear-gradient(top,  #416663 0%,#0c0207 19%); 
             background: linear-gradient(to bottom,  #416663 0%,#0c0207 19%); 
@@ -210,9 +219,14 @@
                 <div class="job-color">
                     <p>engineer at DSI.</p>
                 </div>
-                <a href="https://github.com/ufk-sn">GitHub</a>
             </div>
         </div>
+        <div class="content-container">
+            <div class="sidebar_github">
+                <div class="sidebar_text">
+                    <a href="https://github.com/ufk-sn">GitHub</a>
+                </div>
+            </div>
         <div class="main-content">
             <div class="text-container">
                 <p>I am a Civil Engineer. I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013. I received my Master’s degree in Structural Engineering from the Louisiana State University in August 2018.</p>
