@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected PDFs</title>
+</head>
+<body>
+
+<script>
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var file = getParameterByName('file');
+
+    var passwords = {
+        'CV_CL/ufuk_sen_CV.pdf': 'passwordForCV',
+        'CV_CL/Ufuk_Sen_Cover_Letter.pdf': 'passwordForCoverLetter'
+    };
+
+    if (file && passwords[file]) {
+        var password = prompt("Please enter the password to view the PDF:");
+
+        if (password === passwords[file]) {
+            window.location.href = file; // Redirects to the PDF in the same tab
+            // <p><a href="protected.html?file=CV_CL/ufuk_sen_CV.pdf" target="_blank">CV</a></p>
+        } else {
+            alert("Incorrect password!");
+        }
+    } else {
+        alert("Invalid file request!");
+    }
+</script>
+
+</body>
+</html>
