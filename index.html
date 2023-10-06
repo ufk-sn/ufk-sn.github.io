@@ -200,6 +200,17 @@
             }
 
     </style>
+    <script>
+        function checkPassword(filename, correctPassword) {
+            var password = prompt("Please enter the password to view the PDF:");
+        
+            if(password == correctPassword) {
+                window.open(filename, "_blank");
+            } else {
+                alert("Incorrect password!");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="content-container">
@@ -219,8 +230,8 @@
                 <p>Since Aug 2018, I have been working in the department of dams and hydropower plants,</p>
                 <p>My page for the stability analysis of <a href="https://ufk-sn-retaining-wall.streamlit.app" target="_blank">gravity retaining walls</a> && <a href="https://ufk-sn-retaining-wall2.streamlit.app/" target="_blank">cantilever retaining walls</a></p>
                 <p>My page for the hydraulic analysis of <a href="https://ufk-sn-del2.streamlit.app" target="_blank">spillways and outlet works</a> (not complete)</p>
-                <p><a href="CV_CL/Ufuk_Sen_Cover_Letter.pdf" target="_blank">View My Cover Letter</a></p>
-                <p><a href="CV_CL/ufuk_sen_CV.pdf" target="_blank">View My CV</a></p>
+                <p><a href="#" onclick="checkPassword('CV_CL/ufuk_sen_CV.pdf',           'YYY'); return false;">View My CV</a></p>
+                <p><a href="#" onclick="checkPassword('CV_CL/Ufuk_Sen_Cover_Letter.pdf', 'YYY'); return false;">View My Cover Letter</a></p>
             </div>
         </div>
     </div>
