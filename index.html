@@ -210,27 +210,6 @@
                 alert("Incorrect password!");
             }
         }
-
-        function readFile(file) {
-            const reader = new FileReader();
-
-            reader.onload = function(event) {
-                const content = event.target.result;
-                document.getElementById('fileContent').innerText = content;
-            };
-
-            reader.readAsText(file);
-        }
-
-        // Fetch the text file
-        fetch('/text_master.txt') // Replace 'example.txt' with the path to your text file
-            .then(response => response.blob())
-            .then(blob => {
-                const file = new File([blob], '/text_master.txt');
-                readFile(file);
-            })
-            .catch(error => console.error('Error fetching the file:', error));
-
     </script>
 </head>
 <body>
@@ -240,16 +219,25 @@
             <div class="sidebar_text">
                 <h1>Ufuk Sen</h1>
                 <div class="job-color">
-                    <p>engineer at DSI.</p>
+                    <p>Civil Engineer, MSc</p>
                 </div>
                 <a href="https://github.com/ufk-sn">GitHub</a>
             </div>
         </div>
         <div class="main-content">
             <div class="text-container">
-                <p id="fileContent">Loading...</p>
-                <p>I am a Civil Engineer. I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013. I received my Master’s degree in Structural Engineering from the Louisiana State University in August 2018.</p>
-                <p>Since Aug 2018, I have been working in the department of dams and hydropower plants,</p>
+                <p>I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil
+                     Engineering in 2013. I received my Master’s degree in Structural Engineering from  
+                     Louisiana State University in August 2018.</p>
+                <p>During my graduate studies, I focused on the seismic response of concrete gravity dams.
+                     In my thesis, the fragility curves of concrete gravity dam were obtained to make a risk 
+                     assessment, providing me with a comprehensive understanding of dam behavior
+                      under earthquake loads.</p>
+                <p>After graduation from LSU, I have accrued five years of valuable experience working for the Department 
+                    of Dams and Hydropower Plants in the State Hydraulic Works of Turkey (DSI). My role here has involved
+                    structural and hydraulic design of spillways and outlet works, allowing me to develop skills in creating functional
+                    and cost-effective designs aligned with project requirements.</p>
+                <p>My <a href="https://repository.lsu.edu/gradschool_theses/4730/" target="_blank">Thesis </a> & <a href="https://www.techno-press.org/content/?page=article&journal=eas&volume=18&num=3&ordernum=2" target="_blank">Article</a></p>
                 <p>My page for the stability analysis of <a href="https://ufk-sn-retaining-wall.streamlit.app" target="_blank">gravity retaining walls</a> && <a href="https://ufk-sn-retaining-wall2.streamlit.app/" target="_blank">cantilever retaining walls</a></p>
                 <p>My page for the hydraulic analysis of <a href="https://ufk-sn-del2.streamlit.app" target="_blank">spillways and outlet works</a> (not complete)</p>
                 <p><a href="#" onclick="checkPassword('CV_CL/ufuk_sen_CV.pdf',           'YYY'); return false;">View My CV</a></p>
