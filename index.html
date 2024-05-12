@@ -14,15 +14,17 @@
             font-family: 'Indie Flower', regular;
             position: relative;
             background-color: whitesmoke; /* Just to give a different background for contrast */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         .content-container {
             display: flex;
             justify-content: flex-start; /* Adjusted to start from the left */
             align-items: flex-start;
-            width: 100vw;
-            margin: 0 auto;
-            margin-left: 13vw; /* To account for the sidebar width */
+            width: 100%;
+            max-width: calc(100vw - 20vw);
+            margin-left: 20vw; /* To account for the sidebar width */
+            margin-right: 5em;
             margin-top: 10vh;
         }
 
@@ -35,7 +37,7 @@
             background-color: grey;
             box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
             padding: 20px 10px; /* Padding adjusted for the thin sidebar */
-            z-index: -40;
+            /* z-index: -40; */
         }
 
         .main-content {
@@ -44,7 +46,18 @@
             flex-direction: column;
             align-items: flex-start;
             margin-left: 20px;
-            top: 0;
+            max-width: calc(100% - 20px); /* Adjusted to fit between sidebar and left end */
+            
+        }
+
+        .text-container {
+            width: 100%; /* Set to 100% to ensure it fits within the .main-content */
+            height: auto; /* let it expand as needed */
+            overflow-y: auto;
+            word-wrap: break-word;
+            font-size: 16px;
+            text-align: justify;
+            color: black;
         }
 
         .left-image {
@@ -60,16 +73,6 @@
             height: auto;
             margin-left: auto; /* Center the image horizontally */
             margin-right: auto; /* Center the image horizontally */
-        }
-
-        .text-container {
-            width: 80vw; /* This ensures it takes full width on smaller devices but doesn't exceed 500px */
-            height: auto; /* let it expand as needed */
-            overflow-y: auto;
-            word-wrap: break-word;
-            font-size: 16px;
-            text-align: justify;
-            color: black;
         }
 
         h1 {
@@ -111,22 +114,20 @@
             bottom: 0;
             left: 0px;
             }
-        #cielo{
+        #cielo{             /* sky */
             border-radius: 16px;
             width: 100vw;
             height: 100vh;
             background: linear-gradient(to bottom,  #0B4C5F 0%,#04B4AE 52%,#0c0207 100%); 
             position: absolute;
-            z-index: -30;
             top: 0;
             margin-top: 2em;
             }
-        #edificios{
+        #edificios{         /* buildings */
             background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526533/eva/edificiosOne_fsg7nx.svg');
             height: 100vh; 
             width: 100vw;
-            background-size: auto 100px; 
-            z-index: -10;
+            background-size: auto 100px;
             top: 2em;
             background-repeat: repeat-x;
             -webkit-animation: animar_edificios 120s linear infinite;
@@ -150,7 +151,7 @@
                 from { background-position: -1395px 0; }
                 to { background-position: 1325px 0; }
             } 
-        #luna {
+        #luna {            /* moon */
             width: 6em;
             height: 4em;
             -moz-border-radius: 50%;
@@ -162,28 +163,31 @@
             margin-top: 0;
             margin-left: 50%;
             position: absolute;
-            z-index: -19;
             }
-        #muro{
+        #muro{                  /*  yol */
             height: 2em;
             width: 100vw;
             background: -moz-linear-gradient(top,  #416663 0%, #0c0207 19%); 
             background: -webkit-linear-gradient(top,  #416663 0%,#0c0207 19%); 
-            background: linear-gradient(to bottom,  #416663 0%,#0c0207 19%); 
+            background: linear-gradient(to bottom,  #416663 0%,#0c0207 19%);
             bottom:0px; 
+            position: relative; /* Add this line */
+            z-index: 1000; /* Increase the z-index value */
+            
             }
-        #gato{
+        #gato{                  /* cat */
             background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg');
             height: 100px; 
             width: 170px;
             background-size: 2720px 100px;
             margin-top: 0;
             margin-left: 2em;
-            z-index: 100;
             -webkit-animation: sprite-animation 1.2s steps(15,end) infinite;
             -moz-animation: sprite-animation 1.2s steps(15,end) infinite; 
             -ms-animation: sprite-animation 1.2s steps(15,end) infinite; 
             animation: sprite-animation 1.2s steps(15,end) infinite;
+            position: relative; /* Add this line */
+            z-index: 1000; /* Increase the z-index value */
             }
             @keyframes sprite-animation { 
             from { background-position: 0 0; }
@@ -227,7 +231,8 @@
                 <div class="job-color">
                     <p>Civil Engineer, MSc</p>
                 </div>
-                <a href="https://github.com/ufk-sn">GitHub</a>
+                <p><a href="https://github.com/ufk-sn" target="_blank">GitHub</a></p>
+                <p><a href="https://www.linkedin.com/in/ufuk-sen-665737130" target="_blank">LinkedIn</a></p>
             </div>
         </div>
         <div class="main-content">
@@ -246,7 +251,7 @@
                     and cost-effective designs aligned with project requirements.</p>
                 <h3><u>Publications</u></h3>
                 <p>My <a href="https://repository.lsu.edu/gradschool_theses/4730/" target="_blank">Thesis </a> & <a href="https://www.techno-press.org/content/?page=article&journal=eas&volume=18&num=3&ordernum=2" target="_blank">Article</a></p>
-                <p>My page for the stability analysis of <a href="https://ufk-sn-retaining-wall.streamlit.app" target="_blank">gravity retaining walls</a> && <a href="https://ufk-sn-retaining-wall2.streamlit.app/" target="_blank">cantilever retaining walls</a></p>
+                <p>My page for the stability analysis of <a href="https://ufk-sn-retaining-wall.streamlit.app" target="_blank">gravity retaining walls</a> & <a href="https://ufk-sn-retaining-wall2.streamlit.app/" target="_blank">cantilever retaining walls</a></p>
                 <p>My page for the hydraulic analysis of <a href="https://ufk-sn-del2.streamlit.app" target="_blank">spillways and outlet works</a> (not complete)</p>
                 <p><a href="#" onclick="checkPassword('CV_CL/ufuk_sen_CV.pdf',           'YYY'); return false;">View My CV</a></p>
                 <p><a href="#" onclick="checkPassword('CV_CL/Ufuk_Sen_Cover_Letter.pdf', 'YYY'); return false;">View My Cover Letter</a></p>
