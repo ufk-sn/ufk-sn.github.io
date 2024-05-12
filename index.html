@@ -210,6 +210,27 @@
                 alert("Incorrect password!");
             }
         }
+
+        function readFile(file) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const content = event.target.result;
+                document.getElementById('fileContent').innerText = content;
+            };
+
+            reader.readAsText(file);
+        }
+
+        // Fetch the text file
+        fetch('/text_master.txt') // Replace 'example.txt' with the path to your text file
+            .then(response => response.blob())
+            .then(blob => {
+                const file = new File([blob], '/text_master.txt');
+                readFile(file);
+            })
+            .catch(error => console.error('Error fetching the file:', error));
+
     </script>
 </head>
 <body>
@@ -226,6 +247,7 @@
         </div>
         <div class="main-content">
             <div class="text-container">
+                <p id="fileContent">Loading...</p>
                 <p>I am a Civil Engineer. I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013. I received my Master’s degree in Structural Engineering from the Louisiana State University in August 2018.</p>
                 <p>Since Aug 2018, I have been working in the department of dams and hydropower plants,</p>
                 <p>My page for the stability analysis of <a href="https://ufk-sn-retaining-wall.streamlit.app" target="_blank">gravity retaining walls</a> && <a href="https://ufk-sn-retaining-wall2.streamlit.app/" target="_blank">cantilever retaining walls</a></p>
