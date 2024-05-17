@@ -60,6 +60,46 @@
             color: black;
         }
 
+        .tab-container {
+            width: 100%;
+            height: auto;
+            background-color: lightblue; /* Background color for the tab */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            text-align: justify;
+            text-justify: auto
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-buttons button {
+            padding: 10px 20px;
+            background-color: lightgrey;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .tab-buttons button.active {
+            background-color: grey;
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+            width: 100%;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
         .left-image {
             width: 11vw;
             height: auto;
@@ -221,6 +261,30 @@
                 alert("Incorrect password!");
             }
         }
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("content-section");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Remove the active class from all tab buttons
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Automatically open the default tab
+        document.getElementById("defaultOpen").classList.remove("active");
+        document.getElementById("defaultOpen").click();
     </script>
 </head>
 <body>
@@ -237,7 +301,11 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="text-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" id="defaultOpen" onclick="openTab(event, 'About')">About</button>
+                <button class="tab-button" onclick="openTab(event, 'NewTab')">New Tab</button>
+            </div>
+            <div id="About" class="content-section text-container active">
                 <h2><u>Welcome to my Website!</u></h2>
                 <p>I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil
                      Engineering in 2013. I received my Master’s degree in Structural Engineering from  
@@ -246,7 +314,7 @@
                      In my thesis, the fragility curves of concrete gravity dam were obtained to make a risk 
                      assessment, providing me with a comprehensive understanding of dam behavior
                       under earthquake loads.</p>
-                <p>After graduation from LSU, I have had five years of valuable experience working for the Department 
+                <p>After graduation from LSU, I gained five years of valuable experience working for the Department 
                     of Dams and Hydropower Plants in the State Hydraulic Works of Turkey (DSI). My role here has involved
                     structural and hydraulic design of spillways and outlet works, allowing me to develop skills in creating functional
                     and cost-effective designs aligned with project requirements.</p>
@@ -256,6 +324,39 @@
                 <p>My page for the hydraulic analysis of <a href="https://ufk-sn-del2.streamlit.app" target="_blank">spillways and outlet works</a> (not complete)</p>
                 <p><a href="#" onclick="checkPassword('CV_CL/ufuk_sen_CV.pdf',           'YYY'); return false;">View My CV</a></p>
                 <p><a href="#" onclick="checkPassword('CV_CL/Ufuk_Sen_Cover_Letter.pdf', 'YYY'); return false;">View My Cover Letter</a></p>
+            </div>
+            <div id="NewTab" class="content-section tab-container">
+                <h2>Experiences</h2>
+                <p>I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013.
+                    Following this, I was awarded a prestigious full scholarship from the Turkish Government to study abroad, and 
+                    I earned my master's degree in structural engineering from Louisiana State University in 2018. My research 
+                    focused on the probabilistic risk assessment of concrete gravity dams subjected to earthquake loads. I used Finite 
+                    Element Analysis software, ANSYS, to model the dam, considering fluid-structure interaction (FSI) and soil-
+                    structure interaction (SSI) for more accurate results. Finally, seismic fragility curves were developed to 
+                    evaluate the dam's seismic performance and make risk assessment.</p>
+                <p>I gained five years of valuable experience working for the Department of Dams and Hydropower Plants in the State 
+                    Hydraulic Works of Turkey (DSI)—the leading institution in the country for hydraulic works. During my time at DSI,
+                     I had the opportunity to apply my theoretical knowledge from my graduate studies to solve real-world problems in 
+                     the active dam projects. My role involved the structural and hydraulic design of spillways and outlet works.</p>
+                <p>I have had a responsibility to check stability analyses and structural designs reports prepared by private companies 
+                    for auxiliary structures associated with dams, encompassing spillways, their gravity/console walls, conduits, tunnels,
+                     valve chambers, and similar components. Through these rigorous analyses, I have acquired substantial expertise in
+                      stability analysis techniques for retaining walls, as well as in structural analysis and the design of 
+                      reinforcements for various types of structures. Since Turkey does not have a design code/standards for 
+                      infrastructures like dams, we mainly rely on the design standards set by the USBR or the USACE for our structures.
+                       This familiarity underscores my capability to adapt to U.S. standards.</p> 
+
+                <p>I have also conducted hydraulic design analyses for spillways and outlet works to determine their size, type, and
+                     placement. Furthermore, I participated in a team tasked with conducting hydraulic analysis of stepped and chute
+                      channeled spillways using Flow-3D (CFD software) and constructing physical models of them in the laboratory.
+                       These experiences provided me with a comprehensive understanding of spillway-outlet works hydraulic performance.</p>
+                    
+                <p>Besides working in office, I have participated in several substantial/final acceptance commissions to inspect 
+                    the constructed dams and auxiliary structures for compliance with the project. Furthermore, for six months I 
+                    played an important role during the construction stage of flood protection structures, such as flood protection
+                     walls and dikes, serving as a control engineer.</p>
+                    
+                <p>Now, I am eager to take the next step in my career by working in the US. </p>
             </div>
         </div>
     </div>
