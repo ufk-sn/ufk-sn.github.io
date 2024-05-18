@@ -40,6 +40,34 @@
             /* z-index: -40; */
         }
 
+        @media screen and (max-width: 768px) {
+            .content-container {
+                flex-direction: column; /* Stack the content vertically */
+                margin-left: 0; /* Remove the margin left */
+            }
+
+            .sidebar {
+                position: relative; /* Make the sidebar relative */
+                width: 100%; /* Make it full width */
+                height: auto; /* Adjust the height */
+                padding: 10px; /* Adjust padding for full width */
+                box-shadow: none; /* Remove box shadow for better appearance */
+                margin-bottom: 20px; /* Add some space below the sidebar */
+            }
+
+            .sidebar_text {
+                height: auto;
+                margin-left: auto; /* Center the image horizontally */
+                margin-right: auto; /* Center the image horizontally */
+                text-align: center;
+            }
+
+            .sidebar-link {
+                margin-top: 0px;
+                margin-bottom: 0px; /* Adjust this value to decrease the space between the links */
+            }
+        }
+
         .main-content {
             flex: 2;
             display: flex;
@@ -48,6 +76,10 @@
             margin-left: 20px;
             max-width: calc(100% - 20px); /* Adjusted to fit between sidebar and left end */
             
+        }
+
+        .sidebar-link {
+            margin-bottom: 5px; /* Adjust this value to decrease the space between the links */
         }
 
         .text-container {
@@ -60,10 +92,21 @@
             color: black;
         }
 
-        .tab-container {
+        .tab-container-experiences {
             width: 100%;
             height: auto;
             background-color: lightblue; /* Background color for the tab */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            text-align: justify;
+            text-justify: auto
+        }
+
+        .tab-container-resume {
+            width: 100%;
+            height: auto;
+            background-color: rgb(230, 173, 175); /* Background color for the tab */
             padding: 10px;
             margin-top: 20px;
             border-radius: 10px;
@@ -110,7 +153,6 @@
         }
 
         .sidebar_text {
-            width: 11vw;
             height: auto;
             margin-left: auto; /* Center the image horizontally */
             margin-right: auto; /* Center the image horizontally */
@@ -296,36 +338,106 @@
                 <div class="job-color">
                     <p>Civil Engineer, MSc</p>
                 </div>
-                <p><a href="https://github.com/ufk-sn" target="_blank">GitHub</a></p>
-                <p><a href="https://www.linkedin.com/in/ufuk-sen-665737130" target="_blank">LinkedIn</a></p>
+                <p class="sidebar-link"><a href="https://github.com/ufk-sn" target="_blank">GitHub</a></p>
+                <p class="sidebar-link"><a href="https://www.linkedin.com/in/ufuk-sen-665737130" target="_blank">LinkedIn</a></p>
             </div>
         </div>
         <div class="main-content">
             <div class="tab-buttons">
-                <button class="tab-button active" id="defaultOpen" onclick="openTab(event, 'About')">About</button>
-                <button class="tab-button" onclick="openTab(event, 'NewTab')">New Tab</button>
+                <button class="tab-button active" id="defaultOpen" onclick="openTab(event, 'ufk-sn')">ufk-sn</button>
+                <button class="tab-button" onclick="openTab(event, 'resume')">resume</button>
+                <button class="tab-button" onclick="openTab(event, 'experiences')">experiences</button>
             </div>
-            <div id="About" class="content-section text-container active">
+            <div id="ufk-sn" class="content-section text-container active">
                 <h2><u>Welcome to my Website!</u></h2>
                 <p>I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil
                      Engineering in 2013. I received my Master’s degree in Structural Engineering from  
                      Louisiana State University in August 2018.</p>
-                <p>During my graduate studies, I focused on the seismic response of concrete gravity dams.
-                     In my thesis, the fragility curves of concrete gravity dam were obtained to make a risk 
-                     assessment, providing me with a comprehensive understanding of dam behavior
-                      under earthquake loads.</p>
-                <p>After graduation from LSU, I gained five years of valuable experience working for the Department 
-                    of Dams and Hydropower Plants in the State Hydraulic Works of Turkey (DSI). My role here has involved
-                    structural and hydraulic design of spillways and outlet works, allowing me to develop skills in creating functional
-                    and cost-effective designs aligned with project requirements.</p>
+                <p>After graduation from LSU, I worked for the Department of Dams and Hydropower Plants in the
+                     State Hydraulic Works of Turkey (DSI).</p>
+                <p>Now, I am eager to take the next step in my career by working in the US.</p>
                 <h3><u>Publications</u></h3>
                 <p>My <a href="https://repository.lsu.edu/gradschool_theses/4730/" target="_blank">Thesis </a> & <a href="https://www.techno-press.org/content/?page=article&journal=eas&volume=18&num=3&ordernum=2" target="_blank">Article</a></p>
                 <p>My page for the stability analysis of <a href="https://ufk-sn-retaining-wall.streamlit.app" target="_blank">gravity retaining walls</a> & <a href="https://ufk-sn-retaining-wall2.streamlit.app/" target="_blank">cantilever retaining walls</a></p>
                 <p>My page for the hydraulic analysis of <a href="https://ufk-sn-del2.streamlit.app" target="_blank">spillways and outlet works</a> (not complete)</p>
-                <p><a href="#" onclick="checkPassword('CV_CL/ufuk_sen_CV.pdf',           'YYY'); return false;">View My CV</a></p>
+                <!--
+                    <p><a href="#" onclick="checkPassword('CV_CL/ufuk_sen_CV.pdf',           'YYY'); return false;">View My CV</a></p>
                 <p><a href="#" onclick="checkPassword('CV_CL/Ufuk_Sen_Cover_Letter.pdf', 'YYY'); return false;">View My Cover Letter</a></p>
+                -->
             </div>
-            <div id="NewTab" class="content-section tab-container">
+            <div id="resume" class="content-section tab-container-resume">
+                <h3>EDUCATION</h3>
+                    Louisiana State University, USA 	Master’s Degree (2018)
+                    GPA: 3.43 – Thesis: Risk Assessment of Concrete Gravity Dams under Earthquake Loads
+                    During my graduate studies, I focused on the seismic assessment of concrete gravity dams. I used Finite Element Analysis software, ANSYS, to model the dam, incorporating fluid-structure interaction (FSI) and soil-structure interaction (SSI) for more accurate results. Seismic fragility curves were developed to evaluate the dam's seismic performance.
+                    Bulent Ecevit University, Turkey	Graduate (2013)
+                    GPA: 3.02
+                    
+                <h3>EXPERIENCE</h3>
+                    Project Engineer 	General Directorate of State Hydraulic Works of Turkey (DSI)
+                    NOV 2018 – DEC 2024 / ANKARA, TR
+                    DEP. OF DAMS AND HYDROPOWER PLANTS
+                    My responsibility here was to check reports prepared by private companies for accuracy and compliance with regulations:
+                    •	Conducted structural analysis of dams (stability, static, dynamic etc.)
+                    •	Determined place, type and size of spillways and outlet works based on topography, hydrology, type of dam, etc.
+                    •	Conducted hydraulic design of spillways and outlet work, (i.e., discharge capacity, flood routing, water surface elevation, cavitation, terminal structures design, etc.)
+                    •	Conducted optimization studies on spillway size vs. dam height & outlet work size vs. cofferdam height,
+                    •	Conducted slope stability and tunneling assessments.
+                    
+                    Control Engineer	DSI 233. Division
+                    AUG 2022 – FEB -2023 / BARTIN, TR
+                    Inspected the construction stages of Flood Protection Structures for compliance with the project.
+                    
+                    Field Engineer	Bahadir Engineering & Aras Construction Business Partnership
+                    SEP 2013 – FEB 2014 / ELAZIG, TR
+                    Inspected the construction stages of prison, housing, workplace as parts of High Security Prison Construction Project for compliance with the project.
+                    
+                <h3>PUBLICATIONS</h3>
+                    Sen, U., & Okeil, A. M. (2020). Effect of biaxial stress state on seismic fragility of concrete gravity dams. Earthquakes and Structures, 18(3), 285.
+                <h3>AWARDS</h3>
+                    Awarded with a remarkable fellowship to study abroad by the Ministry of National Education of Turkey.
+                    
+                     
+                <h3>SKILLS</h3>
+                    • Earthquake Engineering
+                    • Dams and HPPs
+                    • Spillways and Outlet Works
+                    • Dynamic Analysis
+                    • Finite Element Methods
+                    • Structural Reliability
+                     
+                <h3>SOFTWARES</h3>
+                    • ANSYS, SAP2000
+                    • AutoCAD
+                    • FLOW-3D, HecRAS
+                    • MATLAB, Python
+                     
+                <h3>LANGUAGES</h3>
+                    • IELTS (2017): 6.50/9.00
+                    • YDS (2019)   : 77.50/100
+                    • GRE (Quantitative) (2016) : 161
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div id="experiences" class="content-section tab-container-experiences">
                 <h2>Experiences</h2>
                 <p>I graduated from Zonguldak Karaelmas University, TR with a bachelor’s degree in Civil Engineering in 2013.
                     Following this, I was awarded a prestigious full scholarship from the Turkish Government to study abroad, and 
@@ -360,6 +472,7 @@
             </div>
         </div>
     </div>
+    <!--
     <div id="marco">
         <div id="cielo"></div>
         <div id="luna"></div>
@@ -367,5 +480,6 @@
         <div id="muro"></div>
         <div id="edificios"></div>
     </div>
+    -->
 </body>
 </html>
