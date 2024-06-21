@@ -13,9 +13,8 @@
     .sidebar {
         position: relative; /* Make the sidebar relative */
         width: auto; /* Make it full width */
-        height: 55vh; /* Adjust the height */
+        height: 43vh; /* Adjust the height */
         box-shadow: none; /* Remove box shadow for better appearance */
-        margin-bottom: 20px; /* Add some space below the sidebar */
         background-color: transparent; /* Light grey background */
         box-shadow: transparent; /* Subtle shadow */
     }
@@ -27,6 +26,7 @@
         text-align: center;
         margin-top: 0px;
         margin-bottom: 0px;
+        line-height: 1;
     }
 
     .left-image {
@@ -41,8 +41,11 @@
     }
 
     .sidebar-link {
-        margin-top: 0px;
-        margin-bottom: 0px; /* Adjust this value to decrease the space between the links */
+        margin: 0px;
+    }
+
+    p {
+        margin: 0;
     }
 }
 
