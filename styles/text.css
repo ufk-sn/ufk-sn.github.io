@@ -1,0 +1,32 @@
+h1 {
+    margin: 0;
+    font-weight: bold;
+}
+
+h2 {
+    color: red;
+    margin: 0;
+}
+
+h3 {
+    color: red;
+    margin-bottom: 5px;
+}
+
+h4 {
+    margin: 0;
+}
+
+h5 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    word-wrap: break-word;
+    line-height: 1;
+}
+
+a {
+    color: blue;
+}

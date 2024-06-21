@@ -1,0 +1,58 @@
+.sidebar {
+    position: fixed; /* Fixes the sidebar to a position */
+    top: 0;          /* Starts from the top edge */
+    left: 0;         /* Starts from the left edge */
+    height: 100vh;   /* Takes the full viewport height */
+    width: 12vw;     /* Fixed width to make it thin */
+    background-color: grey;
+    box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px 10px; /* Padding adjusted for the thin sidebar */
+    /* z-index: -40; */
+}
+
+@media screen and (max-width: 768px) {
+
+    .sidebar {
+        position: relative; /* Make the sidebar relative */
+        width: 100%; /* Make it full width */
+        height: auto; /* Adjust the height */
+        padding: 10px; /* Adjust padding for full width */
+        box-shadow: none; /* Remove box shadow for better appearance */
+        margin-bottom: 20px; /* Add some space below the sidebar */
+    }
+
+    .sidebar_text {
+        height: auto;
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+        text-align: center;
+    }
+
+    .sidebar-link {
+        margin-top: 0px;
+        margin-bottom: 0px; /* Adjust this value to decrease the space between the links */
+    }
+}
+
+.sidebar-link {
+    margin-bottom: 5px; /* Adjust this value to decrease the space between the links */
+}
+
+.left-image {
+    width: 60vw;
+    height: auto;
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+    display: block; /* Make the image a block element to apply margins */
+    border-radius: 30%;
+}
+
+.sidebar_text {
+    height: auto;
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+}
+
+.job-color {
+    font-weight: bold;
+}
