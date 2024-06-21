@@ -103,6 +103,39 @@
     to { left: 100%; } /* Move to the right off-screen */
 }
 
+#excavator2 {
+    background: url("../images/excavator2.svg") no-repeat center center;
+    height: 100px;
+    width: 170px;
+    background-size: 2720px 100px;
+    bottom: 1.5em; /* Position above the bottom edge */
+    left: 120em; /* Adjust to start from the left */
+    animation: move-animation2 25s linear infinite;
+    position: absolute; /* Fixed position to stay at the bottom */
+    z-index: 1; /* Ensure luna is in front of the buildings */
+}
+
+/* New keyframes for horizontal movement */
+@keyframes move-animation2 {
+    from { left: 120px; } /* Start off-screen */
+    to { left: 100%; } /* Move to the right off-screen */
+}
+
+@-webkit-keyframes move-animation2 {
+    from { left: 120px; } /* Start off-screen */
+    to { left: 100%; } /* Move to the right off-screen */
+}
+
+@-ms-keyframes move-animation2 {
+    from { left: 120px; } /* Start off-screen */
+    to { left: 100%; } /* Move to the right off-screen */
+}
+
+@-moz-keyframes move-animation2 {
+    from { left: 120px; } /* Start off-screen */
+    to { left: 100%; } /* Move to the right off-screen */
+}
+
 #kamyon {
     background: url("../images/kamyon.svg") no-repeat center center;
     height: 100px;
@@ -110,62 +143,29 @@
     background-size: 2720px 100px;
     bottom: 0.9em; /* Position above the bottom edge */
     right: 0px; /* Start completely off the right side */
-    animation: move-animation2 30s linear infinite; /* Only move-animation */
+    animation: move-animation3 30s linear infinite; /* Only move-animation */
     position: absolute; /* Fixed position to stay at the bottom */
     z-index: 1; /* Ensure kamyon is in front of the buildings */
 }
 
-@keyframes move-animation2 {
-    from { right: 0px; } /* Start off-screen */
-    to { right: 100%; } /* Move to the right off-screen */
-}
-
-@-webkit-keyframes move-animation2 {
-    from { right: 0px; } /* Start off-screen */
-    to { right: 100%; } /* Move to the right off-screen */
-}
-
-@-ms-keyframes move-animation2 {
-    from { right: 0px; } /* Start off-screen */
-    to { right: 100%; } /* Move to the right off-screen */
-}
-
-@-moz-keyframes move-animation2 {
-    from { right: 0px; } /* Start off-screen */
-    to { right: 100%; } /* Move to the right off-screen */
-}
-
-#excavator2 {
-    background: url("../images/excavator2.svg") no-repeat center center;
-    height: 100px;
-    width: 170px;
-    background-size: 2720px 100px;
-    bottom: 1.5em; /* Position above the bottom edge */
-    left: 250em; /* Adjust to start from the left */
-    animation: move-animation3 25s linear infinite;
-    position: absolute; /* Fixed position to stay at the bottom */
-    z-index: 1; /* Ensure luna is in front of the buildings */
-}
-
-/* New keyframes for horizontal movement */
 @keyframes move-animation3 {
-    from { left: 250px; } /* Start off-screen */
-    to { left: 100%; } /* Move to the right off-screen */
+    from { right: 0px; } /* Start off-screen */
+    to { right: 100%; } /* Move to the right off-screen */
 }
 
 @-webkit-keyframes move-animation3 {
-    from { left: 250px; } /* Start off-screen */
-    to { left: 100%; } /* Move to the right off-screen */
+    from { right: 0px; } /* Start off-screen */
+    to { right: 100%; } /* Move to the right off-screen */
 }
 
 @-ms-keyframes move-animation3 {
-    from { left: 250px; } /* Start off-screen */
-    to { left: 100%; } /* Move to the right off-screen */
+    from { right: 0px; } /* Start off-screen */
+    to { right: 100%; } /* Move to the right off-screen */
 }
 
 @-moz-keyframes move-animation3 {
-    from { left: 250px; } /* Start off-screen */
-    to { left: 100%; } /* Move to the right off-screen */
+    from { right: 0px; } /* Start off-screen */
+    to { right: 100%; } /* Move to the right off-screen */
 }
 
 #crane {
@@ -174,6 +174,17 @@
     width: 170px;
     background-size: 2720px 150px;
     bottom: 1.5em; /* Position above the bottom edge */
+    right: 0em; /* Adjust to start from the left */
+    position: absolute; /* Fixed position to stay at the bottom */
+    z-index: 1; /* Ensure luna is in front of the buildings */
+}
+
+#worker {
+    background: url("../images/worker.svg") no-repeat center center;
+    height: 100px;
+    width: 170px;
+    background-size: 2720px 100px;
+    top: 1.5em; /* Position above the bottom edge */
     right: 0em; /* Adjust to start from the left */
     position: absolute; /* Fixed position to stay at the bottom */
     z-index: 1; /* Ensure luna is in front of the buildings */
