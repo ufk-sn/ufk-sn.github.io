@@ -78,7 +78,7 @@
     bottom: 1.3em; /* Position above the bottom edge */
     left: 0px; /* Start slightly off the left side */
     animation: sprite-animation 1.5s steps(2) infinite, move-animation 40s linear infinite; /* Add move-animation */
-    position: fixed; /* Fixed position to stay at the bottom */
+    position: absolute; /* Fixed position to stay at the bottom */
     z-index: 1; /* Ensure luna is in front of the buildings */
 }
 
