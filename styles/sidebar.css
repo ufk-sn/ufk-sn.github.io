@@ -4,7 +4,7 @@
     left: 0;         /* Starts from the left edge */
     height: 100vh;   /* Takes the full viewport height */
     width: 12vw;     /* Fixed width to make it thin */
-    background-color: #f0f0f0; /* Light grey background */
+    background-color: rgba(240, 240, 240, 0.15); /* Light grey background */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
@@ -74,4 +74,8 @@
 
 h1 {
     margin: 0;
+}
+
+p {
+    margin: 5px;
 }
