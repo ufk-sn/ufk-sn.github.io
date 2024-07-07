@@ -4,13 +4,14 @@ h1 {
 }
 
 h2 {
-    color: red;
+    color: black;
     margin: 0;
 }
 
 h3 {
-    color: red;
+    color: black;
     margin-bottom: 5px;
+    text-decoration: underline;
 }
 
 h4 {
