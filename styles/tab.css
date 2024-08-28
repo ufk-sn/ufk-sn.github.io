@@ -17,6 +17,15 @@
     text-justify: auto
 }
 
+.tab-container-web_apps {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    border-radius: 10px;
+    text-align: justify;
+    text-justify: auto
+}
+
 .tab-buttons {
     display: flex;
     gap: 10px;
