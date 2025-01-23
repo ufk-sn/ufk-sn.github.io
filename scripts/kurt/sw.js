@@ -6,8 +6,6 @@ const filesToCache = [
       './Passenger.js',
       './Boat.js',
       './style/kurt.css',
-      './favicon.png',
-      '../json/manifest.json',
       '../images/kurt/boat.png',
       '../images/kurt/goat.png',
       '../images/kurt/cabbage.png',
